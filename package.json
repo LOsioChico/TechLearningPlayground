@@ -1,11 +1,14 @@
 {
   "name": "TechLearningPlayground",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "repository": "https://github.com/LOsioChico/TechLearningPlayground.git",
   "author": "Luis Osio Chico <72286405+LOsioChico@users.noreply.github.com>",
   "license": "MIT",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
 }
