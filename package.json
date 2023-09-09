@@ -5,10 +5,27 @@
   "repository": "https://github.com/LOsioChico/TechLearningPlayground.git",
   "author": "Luis Osio Chico <72286405+LOsioChico@users.noreply.github.com>",
   "license": "MIT",
+  "workspaces": [
+    "projects/*/**"
+  ],
   "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "prettier": "^3.0.3"
-  }
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard-with-typescript": "^39.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.3",
+    "typescript": "*"
+  },
+  "dependencies": {}
 }
