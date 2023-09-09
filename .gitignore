@@ -1,5 +1,8 @@
 # Every folder starts with prueba will be ignored
 prueba*
 
-# dependencies
-/node_modules
+# Folders on every level will be ignored
+**/node_modules
+**/dist
+**/build
+**/coverage
