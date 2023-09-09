@@ -6,6 +6,8 @@ This is a monorepo project that contains multiple subprojects. The subfolders in
 
 ### Global Configuration Files ⚙️
 
+- `.eslintignore`: Specifies the files and directories to ignore when running ESLint. 🚫
+- `.eslintrc.json`: Configuration file for ESLint. ⚙️
 - `.gitignore`: Specifies the files and directories to ignore when committing to Git. 🙈
 - `.prettierignore`: Specifies the files and directories to ignore when running Prettier. 🧹
 - `.prettierrc`: Configuration file for Prettier. 🖌️
