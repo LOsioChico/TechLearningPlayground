@@ -11,8 +11,10 @@ This is a monorepo project that contains multiple subprojects. The subfolders in
 - `.gitignore`: Specifies the files and directories to ignore when committing to Git. 🙈
 - `.prettierignore`: Specifies the files and directories to ignore when running Prettier. 🧹
 - `.prettierrc`: Configuration file for Prettier. 🖌️
-- `.vscode/settings.json`: Configuration file for VS Code's settings. ⚙️
+
 - `package.json`: Configuration file for npm. 📦
+- `.vscode/settings.json`: Configuration file for VS Code's settings. ⚙️
+- `.vscode/extensions.json`: Configuration file for VS Code's extensions. ⚙️
 
 ### GitHub Actions 🚀
 
