@@ -26,5 +26,9 @@
     "prettier-plugin-tailwindcss": "0.5.4",
     "typescript": "*"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
+  }
 }
