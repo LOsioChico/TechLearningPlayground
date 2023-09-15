@@ -17,10 +17,12 @@ export const VaraText: React.FC<VaraTextProps> = ({ text }) => {
           fontSize: 30,
           strokeWidth: 2,
           color: '#e7fbfc',
+          textAlign: 'center',
+          y: 5,
         },
       ],
     )
   }, [text])
 
-  return <div id='vara-container' className='z-[20]'></div>
+  return <div id='vara-container' className='z-[20]' />
 }
