@@ -34,3 +34,20 @@ This is a monorepo project that contains multiple subprojects. The subfolders in
 ## Initialization 🚀
 
 To initialize a subproject, navigate to the corresponding directory in the `projects` folder and use the appropriate tool, such as `create-next-app` for initializing a Next.js app. 🛠️🏗️
+
+- When you create a new project, I recommend using the `yarn create next-app` or `yarn create t3-app` command to initialize a Next.js. 🛠️🏗️
+<!-- Configure Eslint -->
+- After initializing the project, you need to configurate ESLint adding on the root folder the `.eslintrc.cjs` file with the following content:
+
+```js
+module.exports = {
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+  },
+}
+```
+
+# Author
+
+<!-- 👤 **Luis Osio Chico** -->
