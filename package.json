@@ -6,7 +6,8 @@
   "author": "Luis Osio Chico <72286405+LOsioChico@users.noreply.github.com>",
   "license": "MIT",
   "workspaces": [
-    "projects/*/**"
+    "projects/next-app/*/**",
+    "projects/next-pages/*/**"
   ],
   "scripts": {
     "format": "prettier --write ."
