@@ -17,7 +17,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <SidebarMenu />
-      <nav className='bg-dark fixed flex w-full items-center justify-center opacity-90'>
+      <nav className='bg-dark fixed z-20 flex w-full items-center justify-center opacity-90'>
         <div className='text-primary flex h-24 w-full max-w-[1200px] items-center justify-between px-[2.5%]'>
           <div
             className='mt-4 cursor-pointer select-none text-2xl font-extrabold uppercase tracking-tighter'
