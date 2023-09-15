@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { api } from '@/utils/api'
 import { usePusherHandlers } from 'hooks'
+import bus from '@/assets/bus.png'
 
 import { BusSeats } from '@/components/BusSeats'
 
@@ -85,7 +86,7 @@ const BusPage = () => {
 
         <div className='flex flex-col items-center justify-center gap-4'>
           <Image
-            src='https://o.remove.bg/downloads/55038e0a-062e-4613-b9a4-dcabbe1f3886/Untitled-removebg-preview.png'
+            src={bus}
             alt='Bus'
             className='mx-auto h-48 w-48 md:h-full md:w-64'
             width={300}
