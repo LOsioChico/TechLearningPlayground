@@ -41,10 +41,24 @@ To initialize a subproject, navigate to the corresponding directory in the `proj
 
 ```js
 module.exports = {
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
+}
+```
+
+- Then, your need to add to the tsconfig.json file the following content:
+
+```json
+{
+  // ...
+  "include": [
+    // ...,
+    ".eslintrc.cjs"
+  ]
+  // ...
 }
 ```
 
