@@ -8,11 +8,13 @@ This is a monorepo project that contains multiple subprojects. The subfolders in
 
 - `.eslintignore`: Specifies the files and directories to ignore when running ESLint. 🚫
 - `.eslintrc.json`: Configuration file for ESLint. ⚙️
-- `.gitignore`: Specifies the files and directories to ignore when committing to Git. 🙈
 - `.prettierignore`: Specifies the files and directories to ignore when running Prettier. 🧹
 - `.prettierrc`: Configuration file for Prettier. 🖌️
-
+- `.gitignore`: Specifies the files and directories to ignore when committing to Git. 🙈
 - `package.json`: Configuration file for npm. 📦
+
+### VS Code Configuration Files ⚙️
+
 - `.vscode/settings.json`: Configuration file for VS Code's settings. ⚙️
 - `.vscode/extensions.json`: Configuration file for VS Code's extensions. ⚙️
 
@@ -22,11 +24,8 @@ This is a monorepo project that contains multiple subprojects. The subfolders in
 
 ### Subprojects 📂
 
-- `projects/next-app`: Directory for initializing Next.js app. 🚀
-- `projects/next-pages`: Directory for creating Next.js pages. 📄
-- `projects/trcp`: Directory for initializing trpc project. 🌐
-- `projects/prisma`: Directory for initializing Prisma project. 📊
-- `projects/trpc-prisma`: Directory for initializing trpc and Prisma project. 🌐📊
+- `projects/next-app/*`: Directory for initializing Next.js app with various tools like tRPC, Prisma, etc. 🛠️
+- `projects/next-pages/*`: Directory for creating Next.js pages with various tools like tRPC, Prisma, etc. 🛠️
 
 ### Documentation 📖
 
