@@ -17,7 +17,7 @@ export const BusSeat: React.FC<BusSeatsProps> = ({
         const booked = bookedSeats?.includes(seat)
 
         return (
-          <div
+          <button
             key={seat}
             className={`flex h-14 w-14 select-none items-center justify-center rounded-t-xl text-lg font-semibold text-white transition-all duration-500
           ${
@@ -35,7 +35,7 @@ export const BusSeat: React.FC<BusSeatsProps> = ({
             }}
           >
             {seat}
-          </div>
+          </button>
         )
       })}
     </div>
