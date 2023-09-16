@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <>
       <section className='bg-dark fixed flex h-screen w-full flex-col items-center justify-center'>
-        <div className='flex h-screen w-full max-w-[1200px] flex-col items-start justify-center px-[5%] text-7xl font-extrabold uppercase sm:text-8xl md:text-9xl'>
+        <div className='flex h-screen w-full max-w-[1200px] select-none flex-col justify-center px-[5%] text-7xl font-extrabold uppercase sm:text-8xl md:text-9xl'>
           <motion.span
             className='relative w-full text-center lg:w-4/5'
             initial={{ opacity: 0, y: 100 }}
@@ -33,17 +33,24 @@ const HomePage = () => {
                 src={scribbleCircle}
                 alt='scribble-circle'
                 className='w-[400px] max-w-none sm:w-[520px] md:w-[700px]'
+                draggable={false}
               />
             </motion.span>
           </motion.span>
           <motion.span
-            className='flex w-full items-center justify-center gap-4 lg:w-4/5'
+            className='flex  w-full items-center justify-center gap-4 lg:w-4/5'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8, ease: 'easeInOut' }}
           >
             On
-            <Image src={OFLogo} alt='OnlyFans' width={180} height={120} />
+            <Image
+              src={OFLogo}
+              alt='OnlyFans'
+              width={180}
+              height={120}
+              draggable={false}
+            />
           </motion.span>
         </div>
 
@@ -53,7 +60,7 @@ const HomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.8, ease: 'easeInOut' }}
         >
-          <div className='flex flex-col items-center justify-center gap-1 opacity-50'>
+          <div className='flex flex-col items-center justify-center gap-1 opacity-75'>
             <ScrollDown />
           </div>
           <Button text={t.BecomeAModel} />
