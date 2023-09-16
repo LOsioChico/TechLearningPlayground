@@ -14,3 +14,8 @@
 svg #wheel {
   animation: scroll ease 3s infinite;
 }
+
+.stroke-text {
+  -webkit-text-stroke: 1px #cb6ce6;
+  -webkit-text-fill-color: transparent;
+}
