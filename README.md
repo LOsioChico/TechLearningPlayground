@@ -64,4 +64,4 @@ module.exports = {
 
 # Author
 
-<!-- 👤 **Luis Osio Chico** -->
+👤 **Luis Osio Chico**
