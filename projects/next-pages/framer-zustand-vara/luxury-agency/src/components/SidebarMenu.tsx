@@ -24,12 +24,7 @@ export const SidebarMenu = () => {
         >
           <SidebarMouse isInMenu={isInMenu} />
           <div className='flex h-screen items-center justify-center'>
-            <aside
-              className='relative z-50 flex w-screen cursor-pointer flex-col items-center justify-center divide-y divide-[#222527] overflow-hidden text-center text-7xl font-bold uppercase'
-              onMouseEnter={() => setIsInMenu(true)}
-              onMouseLeave={() => setIsInMenu(false)}
-              role='menu'
-            >
+            <aside className='relative z-50 flex w-screen cursor-pointer flex-col items-center justify-center divide-y divide-[#222527] overflow-hidden text-center text-7xl font-bold uppercase'>
               <div className='w-full' />
               {sidebarLinks.map(({ href, label }) => (
                 <Link
@@ -37,6 +32,8 @@ export const SidebarMenu = () => {
                   key={href}
                   className='bg-dark group relative w-full overflow-hidden'
                   onClick={close}
+                  onMouseEnter={() => setIsInMenu(true)}
+                  onMouseLeave={() => setIsInMenu(false)}
                 >
                   <div className='bg-primary absolute top-0 h-full w-full -translate-y-[105px] opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100' />
                   <div className='relative p-4 transition-all duration-300 group-hover:text-white'>
