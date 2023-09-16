@@ -14,13 +14,3 @@
 svg #wheel {
   animation: scroll ease 3s infinite;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-}
