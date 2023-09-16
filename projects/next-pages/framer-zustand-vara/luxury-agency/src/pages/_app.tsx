@@ -4,12 +4,15 @@ import Head from 'next/head'
 
 import { Layout } from '@/components/Layout'
 
-import { Nunito } from 'next/font/google'
-const nunito = Nunito({ subsets: ['latin'] })
+import { Poppins } from 'next/font/google'
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+})
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <main className={`${nunito.className} text-primary`}>
+    <main className={`${poppins.className} text-primary`}>
       <Layout>
         <Head>
           <title>Luxury Agency</title>
