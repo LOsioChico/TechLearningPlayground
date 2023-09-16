@@ -28,6 +28,7 @@ export const SidebarMenu = () => {
               className='relative z-50 flex w-screen cursor-pointer flex-col items-center justify-center divide-y divide-[#222527] overflow-hidden text-center text-7xl font-bold uppercase'
               onMouseEnter={() => setIsInMenu(true)}
               onMouseLeave={() => setIsInMenu(false)}
+              role='menu'
             >
               <div className='w-full' />
               {sidebarLinks.map(({ href, label }) => (
