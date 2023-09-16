@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { api } from '@/utils/api'
 import { usePusherHandlers } from 'hooks'
 import bus from '@/assets/bus.png'
+import Link from 'next/link'
 
 import { BusSeats } from '@/components/BusSeats'
 
@@ -61,14 +62,9 @@ const BusPage = () => {
 
   return (
     <div className='container relative mx-auto mt-5 flex flex-col items-center rounded-xl bg-white py-12 md:flex-row'>
-      <div className='absolute right-0 top-0 mr-5 mt-5'>
-        <AiFillCloseCircle
-          className='cursor-pointer text-3xl text-indigo-500'
-          onClick={() => {
-            void router.push('/')
-          }}
-        />
-      </div>
+      <Link className='absolute right-0 top-0 mr-5 mt-5' href='/'>
+        <AiFillCloseCircle className='cursor-pointer text-3xl text-indigo-500' />
+      </Link>
       <div className='mx-auto max-w-md text-center md:max-w-2xl'>
         <h2 className='mb-14 flex flex-col border-b border-[#eca74e4f] pb-2 text-2xl font-bold md:flex-row md:items-center md:justify-center'>
           <span>Real Time Booking</span>

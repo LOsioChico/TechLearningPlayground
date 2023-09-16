@@ -26,24 +26,22 @@ export const SidebarMouse: React.FC<SidebarMouseProps> = ({ isInMenu }) => {
   }, [isInMenu])
 
   return (
-    <>
-      <AnimatePresence>
-        {!isInMenu && (
-          <motion.div
-            className='bg-primary background mouse fixed left-0 top-0 z-40 h-16 w-16 cursor-none rounded-full'
-            style={{
-              x: cursorX,
-              y: cursorY,
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.25 }}
-            exit={{ opacity: 0 }}
-          >
-            <IoMdClose className='text-darkLight absolute left-4 top-4 text-3xl' />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+    <AnimatePresence>
+      {!isInMenu && (
+        <motion.div
+          className='bg-primary background mouse fixed left-0 top-0 z-40 h-16 w-16 cursor-none rounded-full'
+          style={{
+            x: cursorX,
+            y: cursorY,
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.25 }}
+          exit={{ opacity: 0 }}
+        >
+          <IoMdClose className='text-darkLight absolute left-4 top-4 text-3xl' />
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }

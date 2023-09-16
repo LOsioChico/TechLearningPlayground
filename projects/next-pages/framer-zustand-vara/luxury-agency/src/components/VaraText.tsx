@@ -13,10 +13,10 @@ export const VaraText: React.FC<VaraTextProps> = ({ text }) => {
       'https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json',
       [
         {
-          text: text,
+          text,
           fontSize: 30,
           strokeWidth: 2,
-          color: '#e7fbfc',
+          color: '#CB6CE6',
           textAlign: 'center',
           y: 5,
         },

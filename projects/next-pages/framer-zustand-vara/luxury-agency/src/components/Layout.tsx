@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { TbWorld } from 'react-icons/tb'
 
 import { useTranslations } from '@/hooks/useTranslations'
-import { useRouter } from 'next/router'
 import { useSidebarMenuStore } from '@/stores/store'
 import { SidebarMenu } from './SidebarMenu'
 
@@ -15,7 +14,6 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const router = useRouter()
   const { t } = useTranslations()
   const { open } = useSidebarMenuStore()
 
@@ -23,15 +21,13 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <SidebarMenu />
       <nav className='bg-dark fixed z-20 flex w-full items-center justify-center opacity-90'>
-        <div className='text-primary flex h-24 w-full max-w-[1200px] items-center justify-between px-[2.5%]'>
-          <div
+        <header className='text-primary flex h-24 w-full max-w-[1200px] items-center justify-between px-[2.5%]'>
+          <Link
             className='mt-4 cursor-pointer select-none text-2xl font-extrabold uppercase tracking-tighter'
-            onClick={() => {
-              void router.push('/')
-            }}
+            href='/'
           >
             <VaraText text='Luxury Agency' />
-          </div>
+          </Link>
           <div className='flex gap-6'>
             <motion.div
               className='text-primary flex w-16 cursor-pointer items-center justify-center gap-1 rounded-full'
@@ -62,7 +58,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               <VscMenu className='cursor-pointer duration-300' size={40} />
             </motion.div>
           </div>
-        </div>
+        </header>
       </nav>
       {children}
     </>

@@ -1,18 +1,14 @@
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export const CreateBusButton = () => {
-  const router = useRouter()
-
   return (
     <div className='absolute bottom-0 right-0 m-4'>
-      <button
-        onClick={() => {
-          void router.push('/create-bus')
-        }}
+      <Link
         className='rounded-full bg-white p-4 font-medium'
+        href='/create-bus'
       >
         Create Bus
-      </button>
+      </Link>
     </div>
   )
 }
