@@ -8,7 +8,7 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({ text }) => {
   return (
     <motion.div
-      className='text-dark cursor-pointer rounded-xl bg-white px-10 py-5 text-sm font-semibold uppercase duration-300 hover:opacity-80'
+      className='bg-primary cursor-pointer rounded-xl px-10 py-5 text-sm font-semibold uppercase text-white duration-300 hover:opacity-80'
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.95 }}
     >
