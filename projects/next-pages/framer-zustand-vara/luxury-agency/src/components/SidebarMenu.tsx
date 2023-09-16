@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { useSidebarMenuStore } from '@/stores/store'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslations } from '@/hooks/useTranslations'
 import { sidebarLinks } from '@/constants/sidebarLinks'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { SidebarMouse } from './SidebarMouse'
 
 export const SidebarMenu = () => {
   const { close, isOpen } = useSidebarMenuStore()
   const [isInMenu, setIsInMenu] = useState(false)
+  const { t } = useTranslations()
 
   return (
     <>
@@ -39,10 +41,11 @@ export const SidebarMenu = () => {
                     >
                       <div className='bg-primary absolute top-0 h-full w-full -translate-y-[105px] opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100' />
                       <div className='group-hover:text-dark relative p-4 transition-all duration-300'>
-                        {label}
+                        {t[label]}
                       </div>
                     </Link>
                   ))}
+
                   <div className='w-full' />
                 </div>
               </div>
