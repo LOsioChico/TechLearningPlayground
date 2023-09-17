@@ -14,7 +14,7 @@ const HomePage = () => {
       <section className='bg-dark fixed flex h-screen w-full flex-col items-center justify-center'>
         <div className='flex h-screen w-full max-w-[1200px] select-none flex-col justify-center px-[5%] text-7xl font-extrabold uppercase sm:text-8xl md:text-9xl'>
           <motion.span
-            className='relative w-full text-center lg:w-4/5'
+            className='stroke-text relative w-full text-center lg:w-4/5'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: 'easeInOut' }}
@@ -22,23 +22,23 @@ const HomePage = () => {
             Breaking
           </motion.span>
           <motion.span
-            className='relative w-full text-center lg:w-4/5'
+            className='stroke-text relative w-full text-center lg:w-4/5'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8, ease: 'easeInOut' }}
           >
             Top 0.1%
-            <motion.span className='absolute -bottom-2 left-1/2 -translate-x-1/2 transform'>
+            <motion.span className='stroke-text absolute -bottom-2 left-1/2 -translate-x-1/2 transform'>
               <Image
                 src={scribbleCircle}
                 alt='scribble-circle'
-                className='w-[400px] max-w-none sm:w-[520px] md:w-[700px]'
+                className='w-[400px] max-w-none opacity-75 sm:w-[520px] md:w-[700px]'
                 draggable={false}
               />
             </motion.span>
           </motion.span>
           <motion.span
-            className='flex  w-full items-center justify-center gap-4 lg:w-4/5'
+            className='stroke-text flex w-full items-center justify-center gap-4 lg:w-4/5'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8, ease: 'easeInOut' }}
@@ -50,6 +50,7 @@ const HomePage = () => {
               width={180}
               height={120}
               draggable={false}
+              className='opacity-75'
             />
           </motion.span>
         </div>

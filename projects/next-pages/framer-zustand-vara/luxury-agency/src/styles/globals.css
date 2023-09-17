@@ -16,6 +16,6 @@ svg #wheel {
 }
 
 .stroke-text {
-  -webkit-text-stroke: 1px #cb6ce6;
+  -webkit-text-stroke: 2px #cb6ce6;
   -webkit-text-fill-color: transparent;
 }
