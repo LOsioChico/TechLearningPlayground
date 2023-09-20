@@ -1,11 +1,12 @@
 import { Typography } from '@mui/material'
+import { Layout } from '@/components/layout/Layout'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+    <Layout>
       <Typography variant='h1' color='primary'>
         Hola Mundo
       </Typography>
-    </main>
+    </Layout>
   )
 }
