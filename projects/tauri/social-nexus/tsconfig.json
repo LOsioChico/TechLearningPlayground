@@ -15,14 +15,21 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".eslintrc.cjs",
-    "next.config.js"
+    "next.config.js",
+    ".next/types/**/*.ts",
+    "tailwind.config.js"
   ],
   "exclude": ["node_modules"]
 }
