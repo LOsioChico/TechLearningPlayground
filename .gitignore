@@ -6,3 +6,5 @@ prueba*
 **/dist
 **/build
 **/coverage
+**/target
+**/out
