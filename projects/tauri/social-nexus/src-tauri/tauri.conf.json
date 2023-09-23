@@ -14,7 +14,7 @@
       "all": false
     },
     "bundle": {
-      "active": true,
+      "active": false,
       "category": "DeveloperTool",
       "copyright": "",
       "deb": {
@@ -58,7 +58,9 @@
         "resizable": true,
         "title": "SocialNexus",
         "minHeight": 500,
-        "minWidth": 940
+        "minWidth": 940,
+        "theme": "Dark",
+        "contentProtected": true
       }
     ]
   }
