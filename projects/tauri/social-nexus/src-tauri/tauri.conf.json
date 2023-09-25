@@ -60,7 +60,9 @@
         "minHeight": 500,
         "minWidth": 940,
         "theme": "Dark",
-        "contentProtected": true
+        "contentProtected": true,
+        "transparent": true,
+        "decorations": false
       }
     ]
   }
