@@ -2,17 +2,20 @@
 import { Minus, Square, X } from 'lucide-react'
 
 interface TitleBarProps {
-  variant?: 'burple' | 'dark'
+  variant?: 'burple' | 'default'
 }
 
-export const TitleBar: React.FC<TitleBarProps> = ({ variant = 'dark' }) => {
+export const TitleBar: React.FC<TitleBarProps> = ({ variant = 'default' }) => {
   return (
     <div
       data-tauri-drag-region
       className={`flex h-5 items-center justify-between ${colors[variant]}`}
       onDrag={windowActions.startDrag}
     >
-      <div className='pl-2 text-xs font-extrabold text-gray-400'>
+      <div
+        className='pl-2 text-xs font-extrabold text-gray-400'
+        data-tauri-drag-region
+      >
         SocialNexus
       </div>
       <div className='flex h-full items-center justify-center text-gray-400'>
@@ -42,7 +45,7 @@ export const TitleBar: React.FC<TitleBarProps> = ({ variant = 'dark' }) => {
 
 const colors = {
   burple: 'bg-burple',
-  dark: 'bg-dark',
+  default: '',
 }
 
 const windowActions = {
