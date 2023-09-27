@@ -1,10 +1,11 @@
-export const AuthBackground = () => {
+export const AuthBackground = ({ ...props }) => {
   return (
     <svg
-      className='artwork-L5TAwQ h-screen w-screen'
+      className='artwork-L5TAwQ'
       preserveAspectRatio='xMinYMin slice'
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 1700 1200'
+      {...props}
     >
       <defs>
         <linearGradient
