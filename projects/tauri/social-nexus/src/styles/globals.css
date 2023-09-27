@@ -2,10 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: gg sans;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/fonts/3d6549bf2f38372c054eafb93fa358a9.woff2)
+    format('woff2');
+}
+
+@font-face {
+  font-family: gg sans;
+  font-style: normal;
+  font-weight: 500;
+  src: url(../assets/fonts/7f63813838e283aea62f1a68ef1732c2.woff2)
+    format('woff2');
+}
+
+@font-face {
+  font-family: gg sans;
+  font-style: normal;
+  font-weight: 600;
+  src: url(../assets/fonts/71d3e9dc2bcb8e91225ba9fab588c8f2.woff2)
+    format('woff2');
+}
+
+@font-face {
+  font-family: gg sans;
+  font-style: normal;
+  font-weight: 700;
+  src: url(../assets/fonts/ff5eccde83f118cea0224ebbb9dc3179.woff2)
+    format('woff2');
+}
+
 html,
 body,
 :root {
   height: 100%;
   background-color: transparent;
   user-select: none;
+  line-height: 1;
+  font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
 }
