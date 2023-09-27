@@ -1,6 +1,7 @@
 'use client'
-import { Minus, Square, X } from 'lucide-react'
-
+// import { Minus, Square, X } from 'lucide-react'
+// from react-icons
+import { LuMinus, LuSquare, LuX } from 'react-icons/lu'
 interface TitleBarProps {
   variant?: 'burple' | 'default'
 }
@@ -23,20 +24,20 @@ export const TitleBar: React.FC<TitleBarProps> = ({ variant = 'default' }) => {
           className='h-full px-1.5 duration-300 hover:bg-black hover:bg-opacity-10 hover:text-white'
           onClick={windowActions.minimize}
         >
-          <Minus size={18} strokeWidth={1.4} />
+          <LuMinus size={18} strokeWidth={1.4} />
         </button>
         <button
           className='h-full px-2 duration-300 hover:bg-black hover:bg-opacity-10 hover:text-white'
           onClick={windowActions.maximize}
         >
-          <Square size={14} strokeWidth={1.4} />
+          <LuSquare size={14} strokeWidth={1.4} />
         </button>
 
         <button
           className='hover:bg-red h-full px-1.5 duration-300 hover:text-white'
           onClick={windowActions.close}
         >
-          <X size={18} strokeWidth={1.4} />
+          <LuX size={18} strokeWidth={1.4} />
         </button>
       </div>
     </div>
