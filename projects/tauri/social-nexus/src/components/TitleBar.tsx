@@ -1,7 +1,6 @@
 'use client'
-// import { Minus, Square, X } from 'lucide-react'
-// from react-icons
 import { LuMinus, LuSquare, LuX } from 'react-icons/lu'
+
 interface TitleBarProps {
   variant?: 'burple' | 'default'
 }

@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        danger: 'hsl( 358 calc( 1 *92.9%) 72.4% /0.75)',
         red: '#ED4245',
         green: '#57F287',
         yellow: '#FEE75C',

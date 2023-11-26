@@ -1,9 +1,60 @@
 'use client'
-import { useLoginForm } from '@/hooks/useLoginForm'
+import { useState } from 'react'
 import { ThreeDots } from '../loaders/ThreeDots'
+import { loginSchema, forgotPasswordSchema } from '@/schemas'
+import { supabase } from '@/lib/supabase'
 
 export const LoginModal = () => {
-  const { onSubmit, register, isSubmitting } = useLoginForm()
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isError, setIsError] = useState(false)
+  const [isForgotPasswordError, setIsForgotPasswordError] = useState(false)
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsForgotPasswordError(false)
+    setIsSubmitting(true)
+    setIsError(false)
+
+    try {
+      loginSchema.parse(inputs)
+    } catch (err) {
+      setIsError(true)
+      setIsSubmitting(false)
+      return
+    }
+
+    const { data, error } = await supabase.auth.signInWithPassword(inputs)
+
+    if (error) {
+      setIsError(true)
+      setIsSubmitting(false)
+      return
+    }
+
+    console.log(data)
+  }
+
+  const handleInputs = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputs({ ...inputs, [e.target.id]: e.target.value })
+  }
+
+  const handleForgotPassword = () => {
+    try {
+      forgotPasswordSchema.parse({
+        email: inputs.email,
+      })
+      setIsForgotPasswordError(false)
+    } catch (err) {
+      setIsForgotPasswordError(true)
+      return
+    }
+
+    void supabase.auth.resetPasswordForEmail(inputs.email)
+  }
 
   return (
     <form
@@ -19,41 +70,91 @@ export const LoginModal = () => {
         </p>
       </header>
 
-      <div className='mt-5 flex flex-col'>
+      <div className='mt-5 flex flex-col tracking-[0.02em]'>
         <div className='mb-5 flex flex-col'>
-          <label
-            htmlFor='email'
-            className='text-normalGray mb-2 text-left text-xs font-bold uppercase'
-          >
-            Email or Phone Number <span className='text-red'>*</span>
-          </label>
+          {!isError && !isForgotPasswordError && (
+            <label
+              htmlFor='email'
+              className='text-normalGray mb-2 text-left text-xs font-bold uppercase'
+            >
+              Email or Phone Number <span className='text-red'>*</span>
+            </label>
+          )}
+
+          {isForgotPasswordError && (
+            <label
+              htmlFor='email'
+              className='text-danger mb-2 text-left text-xs font-bold'
+            >
+              <span className='uppercase'>Email or Phone Number</span>
+              <span className='font-normal italic'>
+                {' '}
+                - This field is required.
+              </span>
+            </label>
+          )}
+
+          {isError && (
+            <label
+              htmlFor='email'
+              className='text-danger mb-2 text-left text-xs font-bold'
+            >
+              <span className='uppercase'>Email or Phone Number</span>
+              <span className='font-normal italic'>
+                {' '}
+                - Login or password is invalid.
+              </span>
+            </label>
+          )}
+
           <input
             type='text'
             id='email'
+            autoComplete='off'
             className='bg-inputBackground rounded-sm p-2 outline-none'
-            {...register('email')}
+            value={inputs.email}
+            onChange={handleInputs}
           />
         </div>
         <div className='flex flex-col'>
-          <label
-            htmlFor='password'
-            className='text-normalGray mb-2 text-left text-xs font-bold uppercase'
-          >
-            Password <span className='text-red'>*</span>
-          </label>
+          {!isError && (
+            <label
+              htmlFor='password'
+              className='text-normalGray mb-2 text-left text-xs font-bold uppercase'
+            >
+              Password <span className='text-red'>*</span>
+            </label>
+          )}
+
+          {isError && (
+            <label
+              htmlFor='password'
+              className='text-danger mb-2 text-left text-xs font-bold'
+            >
+              <span className='uppercase'>Password</span>
+              <span className='font-normal italic'>
+                {' '}
+                - Login or password is invalid.
+              </span>
+            </label>
+          )}
 
           <input
             type='password'
             id='password'
             className='bg-inputBackground rounded-sm p-2 outline-none'
-            {...register('password')}
+            value={inputs.password}
+            onChange={handleInputs}
           />
         </div>
       </div>
 
-      <button className='text-textLink mb-5 mt-1 self-start text-sm font-medium'>
+      <span
+        className='text-textLink mb-5 mt-1 cursor-pointer self-start text-sm font-medium'
+        onClick={handleForgotPassword}
+      >
         Forgot your password?
-      </button>
+      </span>
 
       <button
         className='bg-burple hover:bg-burpleHover active:bg-burpleActive mb-2 flex items-center justify-center rounded-sm
